@@ -1,35 +1,93 @@
-$(function() {
-    "use strict";
+    new WOW().init();
 
-    $(".preloader").fadeOut();
-    // this is for close icon when navigation open in mobile view
-    $(".nav-toggler").on('click', function() {
-        $("#main-wrapper").toggleClass("show-sidebar");
-        $(".nav-toggler i").toggleClass("ti-menu");
-    });
-    $(".search-box a, .search-box .app-search .srh-btn").on('click', function() {
-        $(".app-search").toggle(200);
-        $(".app-search input").focus();
+(function ($) {
+
+   'use strict';
+
+    /*
+     * ----------------------------------------------------------------------------------------
+     *  SMOTH SCROOL JS
+     * ----------------------------------------------------------------------------------------
+     */
+
+    $('a.smoth-scroll').on('click', function (e) {
+        var anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top - 50
+        }, 1000);
+        e.preventDefault();
     });
 
-    // ============================================================== 
-    // Resize all elements
-    // ============================================================== 
-    $("body, .page-wrapper").trigger("resize");
-    $(".page-wrapper").delay(20).show();
+
+
+    /* ==========================================================================
+      COUNTER UP 
+ ========================================================================== */
+
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+
+    $('.carousel').carousel({
+      interval: 8000
+    });
     
-    //****************************
-    /* This is for the mini-sidebar if width is less then 1170*/
-    //**************************** 
-    var setsidebartype = function() {
-        var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
-        if (width < 1170) {
-            $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
-        } else {
-            $("#main-wrapper").attr("data-sidebartype", "full");
-        }
-    };
-    $(window).ready(setsidebartype);
-    $(window).on("resize", setsidebartype);
+    /* Closes the Responsive Menu on Menu Item Click*/
+    $('.navbar-collapse .navbar-nav a').on('click', function () {
+        $('.navbar-toggler:visible').click();
+    });
+    /*END MENU JS*/
 
-});
+    
+    /* ----------------------------------------------------------- */
+    /*  Fixed header
+    /* ----------------------------------------------------------- */
+
+
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 70) {
+            $('.site-navigation,.trans-navigation').addClass('header-white');
+        } else {
+            $('.site-navigation,.trans-navigation').removeClass('header-white');
+        }
+
+
+
+    });
+
+
+    /* ==========================================================================
+      SCROLL SPY
+ ========================================================================== */
+
+    $('body').scrollspy({
+        target: '.navbar-collapse',
+        offset: 195
+    });
+
+
+
+
+
+
+          /*START GOOGLE MAP*/
+          function initialize() {
+            var mapOptions = {
+              zoom: 15,
+              scrollwheel: false,
+              center: new google.maps.LatLng(40.7127837, -74.00594130000002)
+            };
+            var map = new google.maps.Map(document.getElementById('map'),
+                mapOptions);
+            var marker = new google.maps.Marker({
+              position: map.getCenter(),
+              icon: 'assets/img/map_pin.png',
+              map: map
+            });
+          }
+          google.maps.event.addDomListener(window, 'load', initialize);	
+          /*END GOOGLE MAP*/	
+
+
+})(window.jQuery);
