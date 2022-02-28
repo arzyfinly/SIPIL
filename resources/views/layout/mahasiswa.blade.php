@@ -1,9 +1,10 @@
 <?php
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
-$u = Session::get('role');
-$user = DB::table('users')->where(['role'=>$u])->first();
+$u = Session::get('id');
+$user = DB::table('users')->where(['id'=>$u, 'role'=>"mahasiswa"])->first();
 ?>
 <!DOCTYPE html>
 <html lang="zxx">

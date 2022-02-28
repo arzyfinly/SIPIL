@@ -1,9 +1,13 @@
 <?php
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
-$u = Session::get('role');
-$user = DB::table('users')->where(['role'=>$u])->first();
+if(Session::get('role') != "admin"){
+    echo "<script>window.location='".Url::to('admin/login')."'</script>";
+}
+$u = Session::get('id');
+$user = DB::table('users')->where(['id'=>$u])->first();
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -95,7 +99,12 @@ $user = DB::table('users')->where(['role'=>$u])->first();
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2"><?= $user->nama ?>
+                                <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">
+                                <?php
+                                if($user != null){
+                                    echo $user->nama;
+                                }
+                                ?>
                             </a>
                             <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                         </li>

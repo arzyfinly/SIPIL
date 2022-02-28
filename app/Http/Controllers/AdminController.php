@@ -29,7 +29,8 @@ class AdminController extends BaseController
         $user = DB::table('users')->where(['email'=>$request->email])->first();
         if($user != null){
             if(Hash::check($request->password, $user->password) && $user->role == "admin"){
-                $users = Session::put('role', $user->role);
+                Session::put('id', $user->id);
+                Session::put('role', $user->role);
                 echo "<script>window.location='".Url::to('admin')."'</script>";
             }else{
                 echo "<script>alert('Anda Bukan Admin, Silahkan Login Ke Halaman Mahasiswa');window.location='".Url::to('/mahasiswa/login/')."'</script>";
