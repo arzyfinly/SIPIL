@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\URL;
 
 $u = Session::get('id');
 $user = DB::table('users')->where(['id'=>$u, 'role'=>"mahasiswa"])->first();
+if(Session::get('role') == "admin"){
+    echo "<script>window.location='".Url::to('mahasiswa/login')."'</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
