@@ -53,40 +53,12 @@ if(Session::get('role') == "admin"){
               </button>
 
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-                <ul class="navbar-nav ">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link smoth-scroll" href="about.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="service.html">Service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="pricing.html">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="contact.html">Contact</a>
-                    </li>
                     <?php
-                        if($user != null){
-                    ?>
-                    <div class="dropdown nav-item">
-                        <a class="nav-link smoth-scroll" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?= $user->nama ?>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <a class="dropdown-item" href="#">Setting</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-                        </div>
-                    </div>
-                    <?php
-                        }else{
+                        if($user == null){
                     ?>
                     <div class="dropdown nav-item">
                         <a class="nav-link smoth-scroll" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -95,6 +67,31 @@ if(Session::get('role') == "admin"){
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('login-admin') }}">Login As Admin</a>
                             <a class="dropdown-item" href="{{ route('login') }}">Login As Mahasiswa</a>
+                        </div>
+                    </div>
+                    <?php
+                        }else{
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link smoth-scroll" href="pricing.html">Penelitian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link smoth-scroll" href="blog.html">Inventaris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link smoth-scroll" href="contact.html">Keuangan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link smoth-scroll" href="contact.html">Contact</a>
+                    </li>
+                    <div class="dropdown nav-item">
+                        <a class="nav-link smoth-scroll" href="" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= $user->nama ?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownUser">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Setting</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
                         </div>
                     </div>
                     <?php } ?>
@@ -134,7 +131,11 @@ if(Session::get('role') == "admin"){
         </div>
     </div>
 </div>
+<?php 
+    if($user != null){
+?>
 @yield('content')
+<?php }?>
 
     
     <!-- Main jQuery -->
