@@ -58,20 +58,22 @@ if(Session::get('role') == "admin"){
                         <a class="nav-link smoth-scroll" href="about.html">Home</a>
                     </li>
                     <?php
-                        if($user == null){
+                        if($user != null){
                     ?>
-                    <div class="dropdown nav-item">
+                    <div class="dropdown nav-item" style="width: 110px;">
                         <a class="nav-link smoth-scroll" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Login
+                            Praktikum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{ route('login-admin') }}">Login As Admin</a>
-                            <a class="dropdown-item" href="{{ route('login') }}">Login As Mahasiswa</a>
+                            <a class="dropdown-item" href="{{ route('pendaftaran') }}">Pendaftaran Praktikum</a>
+                            <a class="dropdown-item" href="#">Daftar Hadir</a>
+                            <a class="dropdown-item" href="#">Pelaksanaangi</a>
+                            <a class="dropdown-item" href="#">Pelaksanaan Ujian Praktikum</a>
                         </div>
                     </div>
-                    <?php
-                        }else{
-                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link smoth-scroll" href="service.html">Sewa Alat</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link smoth-scroll" href="pricing.html">Penelitian</a>
                     </li>
@@ -81,17 +83,26 @@ if(Session::get('role') == "admin"){
                     <li class="nav-item">
                         <a class="nav-link smoth-scroll" href="contact.html">Keuangan</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="contact.html">Contact</a>
-                    </li>
                     <div class="dropdown nav-item">
-                        <a class="nav-link smoth-scroll" href="" id="dropdownUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link smoth-scroll" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $user->nama ?>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownUser">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Profile</a>
                             <a class="dropdown-item" href="#">Setting</a>
                             <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                        </div>
+                    </div>
+                    <?php
+                        }else{
+                    ?>
+                    <div class="dropdown nav-item">
+                        <a class="nav-link smoth-scroll" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('login-admin') }}">Login As Admin</a>
+                            <a class="dropdown-item" href="{{ route('login') }}">Login As Mahasiswa</a>
                         </div>
                     </div>
                     <?php } ?>
@@ -135,7 +146,7 @@ if(Session::get('role') == "admin"){
     if($user != null){
 ?>
 @yield('content')
-<?php }?>
+<?php }else{}?>
 
     
     <!-- Main jQuery -->

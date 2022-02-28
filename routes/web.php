@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PendaftaranController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,4 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/admin/', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin/login/', [AdminController::class, 'login'])->name('login-admin');
 Route::post('/admin/auth/', [AdminController::class, 'auth'])->name('admin.login');
+Route::get('/mahasiswa/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
