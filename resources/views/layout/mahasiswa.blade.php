@@ -55,7 +55,7 @@ if(Session::get('role') == "admin"){
             <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="about.html">Home</a>
+                        <a class="nav-link smoth-scroll" href="{{ route('/') }}">Home</a>
                     </li>
                     <?php
                         if($user != null){
