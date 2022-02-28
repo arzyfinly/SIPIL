@@ -23,12 +23,16 @@ class LoginController extends BaseController
     {
         $user = DB::table('users')->where(['email'=>$request->email])->first();
 
-        if(Hash::check($request->pass, $user->password)){
-            $users = Session::put('id', $user->id);
-            echo "<script>window.location='".Url::to('/')."'</script>";
+        if($user != null){
+            if(Hash::check($request->pass, $user->password) && $user->role == "mahasiswa"){
+                $users = Session::put('role', $user->role);
+                echo "<script>window.location='".Url::to('/')."'</script>";
+            }else{
+                echo "<script>alert('Username atau Password Salah!!');window.location='".Url::to('/mahasiswa/login')."'</script>";
+            }
         }else{
             echo "<script>alert('Username atau Password Salah!!');window.location='".Url::to('/mahasiswa/login')."'</script>";
-        }
+        }        
     }
 
     public function logout()

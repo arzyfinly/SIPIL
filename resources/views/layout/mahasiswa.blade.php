@@ -2,8 +2,8 @@
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
-$u = Session::get('id');
-$user = DB::table('users')->where(['id'=>$u])->first();
+$u = Session::get('role');
+$user = DB::table('users')->where(['role'=>$u])->first();
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
