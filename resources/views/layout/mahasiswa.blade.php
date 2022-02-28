@@ -84,9 +84,15 @@ $user = DB::table('users')->where(['id'=>$u])->first();
                     <?php
                         }else{
                     ?>
-                    <li class="nav-item">
-                        <a class="nav-link smoth-scroll" href="{{ route('login') }}">Login</a>
-                    </li>
+                    <div class="dropdown nav-item">
+                        <a class="nav-link smoth-scroll" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('login-admin') }}">Login As Admin</a>
+                            <a class="dropdown-item" href="{{ route('login') }}">Login As Mahasiswa</a>
+                        </div>
+                    </div>
                     <?php } ?>
                 </ul>
             </div>
