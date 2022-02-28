@@ -105,8 +105,18 @@ $user = DB::table('users')->where(['id'=>$u])->first();
                         <div class="banner-content content-padding">
                             <h1 class="banner-title">Register To Become a Civil Engineer</h1>
                             <p>We hope you enjoy our website. and be an exemplary worker</p>
-
-                            <a href="#" class="btn btn-white btn-circled">lets start</a>
+                            <?php
+                                if($user != null){
+                            ?>
+                            <br>
+                            <br>
+                            <?php
+                                }else{
+                            ?>
+                                <a href="{{ route('login') }}" class="btn btn-white btn-circled">lets start</a>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
