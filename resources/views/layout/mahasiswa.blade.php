@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 
 $u = Session::get('id');
-$user = DB::table('users')->where(['id'=>$u, 'role'=>"mahasiswa"])->first();
+$user = DB::table('mahasiswa')->where(['id_user'=>$u])->first();
 if(Session::get('role') == "admin"){
     echo "<script>window.location='".Url::to('admin/')."'</script>";
 }
@@ -43,7 +43,7 @@ if(Session::get('role') == "admin"){
 
 <nav class="navbar navbar-expand-lg fixed-top trans-navigation">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{ route('/') }}">
                 <img src="images/sipil2.png" alt="" class="img-fluid b-logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +88,7 @@ if(Session::get('role') == "admin"){
                             <?= $user->nama ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
                             <a class="dropdown-item" href="#">Setting</a>
                             <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
                         </div>

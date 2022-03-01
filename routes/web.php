@@ -6,6 +6,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\PraktikumController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +31,4 @@ Route::post('/admin/auth/', [AdminController::class, 'auth'])->name('admin.login
 Route::get('/mahasiswa/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
 Route::post('/mahasiswa/verification', [PendaftaranController::class, 'daftar'])->name('daftar');
 Route::get('/mahasiswa/registration', [MahasiswaController::class, 'register'])->name('register');
+Route::get('/mahasiswa/profile/', [ProfileController::class, 'profile'])->name('profile');

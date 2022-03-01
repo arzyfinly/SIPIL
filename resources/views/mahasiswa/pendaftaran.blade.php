@@ -41,7 +41,7 @@
 									<span class="form-label">Tempat Lahir</span>
 								</div>
 							</div>
-                            <div class="col-md-6">
+                            <div class="col-md-5">
 								<div class="form-group">
                                     <input type="text" name="no_hp" class="form-control" placeholder="08XXXXXXXXXX" value="<?= $mahasiswa->no_hp ?>" disabled>
 									<span class="form-label">Nomor Handphone</span>
@@ -58,7 +58,7 @@
 									<span class="form-label">Prasyarat</span>
 								</div>
 							</div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
 								<div class="form-group">
 									<select class="form-control" name="prak">
 										<option>-- Pilih Praktikum --</option>
@@ -70,10 +70,19 @@
 										<option value="Perkerasan Jalan Raya">Perkerasan Jalan Raya</option>
 										<option value="Beton">Beton</option>
 									</select>
-									<span class="form-label">Prasyarat</span>
+									<span class="form-label">Praktikum</span>
 								</div>
 							</div>
-							
+							<div class="col-md-6">
+								<div class="form-group">
+									<select class="form-control" name="prak">
+										<option>-- Pilih Kelas --</option>
+										<option value="Kelas A">Kelas A</option>
+										<option value="Kelas B">Kelas B</option>
+									</select>
+									<span class="form-label">Kelas</span>
+								</div>
+							</div>
 							<div class="col-md-3">
 								<div class="form-btn">
                                     <a type="submit" href="{{ route('/') }}" class="btn btn-danger">Back</a>
