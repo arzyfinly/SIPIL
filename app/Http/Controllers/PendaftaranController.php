@@ -13,6 +13,13 @@ class PendaftaranController extends BaseController
 {
     public function index()
     {
-        return view('mahasiswa.pendaftaran');
+        $id = Session::get('id');
+        $user = DB::table('users')->where(['id'=>$id])->first();
+        $mahasiswa = DB::table('mahasiswa')->where(['email'=>$user->email])->first();
+        if($mahasiswa != null){
+            return view('mahasiswa.pendaftaran', ['mahasiswa'=>$mahasiswa]);
+        }else{
+            return view('/');
+        }
     }
 }

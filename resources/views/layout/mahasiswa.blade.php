@@ -121,16 +121,20 @@ if(Session::get('role') == "admin"){
                 <div class="row">
                     <div class="col-lg-8 m-auto text-center col-sm-12 col-md-12">
                         <div class="banner-content content-padding">
-                            <h1 class="banner-title">Register To Become a Civil Engineer</h1>
-                            <p>We hope you enjoy our website. and be an exemplary worker</p>
                             <?php
                                 if($user != null){
                             ?>
+                            <h1 class="banner-title">Welcome to Website Civil Engineering</h1>
+                            <p>We hope you enjoy our website. and be an exemplary worker</p>
                             <br>
                             <br>
                             <?php
                                 }else{
                             ?>
+                                <h1 class="banner-title">Register To Become a Civil Engineer</h1>
+                                <p>Create an account and become a civil engineer</p>
+                                <br>
+                                <br>
                                 <a href="{{ route('login') }}" class="btn btn-white btn-circled">lets start</a>
                             <?php
                                 }

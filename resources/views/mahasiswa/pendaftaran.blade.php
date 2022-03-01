@@ -13,31 +13,37 @@
 						<form method="post" action="{{ route('daftar') }}">
 							<div class="col-md-12">
 								<div class="form-group">
-                                    <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap">
+                                    <input type="text" class="form-control" name="nama" disabled value="<?= $mahasiswa->nama ?>" placeholder="Nama Lengkap">
 									<span class="form-label">Nama Lengkap</span>
 								</div>
 							</div>
                             <div class="col-md-4">
 								<div class="form-group">
-                                    <input type="text" class="form-control" name="npm" placeholder="08XXXX">
+                                    <input type="text" class="form-control" name="npm" placeholder="08XXXX" disabled value="<?= $mahasiswa->nim ?>">
 									<span class="form-label">NPM</span>
 								</div>
 							</div>
                             <div class="col-md-8">
 								<div class="form-group">
-                                    <input type="text" class="form-control" name="alamat" placeholder="Jln. XXX XXXX">
+                                    <input type="text" class="form-control" name="alamat" placeholder="Jln. XXX XXXX" value="<?= $mahasiswa->alamat ?>" disabled>
 									<span class="form-label">Alamat</span>
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
-                                    <input type="text" name="ttl" class="form-control" placeholder="Sumenep, XX-XX-XXXX">
-									<span class="form-label">Tempat Tanggal Lahir</span>
+                                    <input type="date" name="tgl_lahir" class="form-control" value="<?= $mahasiswa->tgl_lahir ?>" disabled>
+									<span class="form-label">Tanggal Lahir</span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+                                    <input type="text" name="tmpt_lahir" class="form-control" placeholder="Sumenep, XX-XX-XXXX" value="<?= $mahasiswa->tmpt_lahir ?>" disabled>
+									<span class="form-label">Tempat Lahir</span>
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
-                                    <input type="text" name="noHp" class="form-control" placeholder="08XXXXXXXXXX">
+                                    <input type="text" name="no_hp" class="form-control" placeholder="08XXXXXXXXXX" value="<?= $mahasiswa->no_hp ?>" disabled>
 									<span class="form-label">Nomor Handphone</span>
 								</div>
 							</div>
@@ -68,10 +74,10 @@
 								</div>
 							</div>
 							
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<div class="form-btn">
-                                    <a type="submit" href="{{ route('/') }}" class="btn btn-danger btn-lg">Back</a>
-									<input type="submit" class="btn btn-primary btn-lg" value="Daftar">
+                                    <a type="submit" href="{{ route('/') }}" class="btn btn-danger">Back</a>
+									<input type="submit" class="btn btn-primary" value="Daftar">
 								</div>
 							</div>
 						</form>
