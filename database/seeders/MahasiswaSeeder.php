@@ -26,7 +26,9 @@ class MahasiswaSeeder extends Seeder
             'gender' => 'Laki - Laki',
         ]);
         DB::table('mahasiswa')->insert([
-            'nama' => 'Muhammad Bagus Raga Maulidi',
+            'first_name' => 'Muhammad Bagus',
+            'last_name' => 'Bagus Raga',
+            'surename' => 'Raga',
             'id_user' => '2',
             'nim' => '71951123',
             'alamat' => 'Jl. Kh. Wahid Hasyim GG 11',
