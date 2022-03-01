@@ -7,6 +7,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="booking-form">
+						<div style="text-align: center;">
+							<h4>Pendaftaran Praktikum</h4>
+						</div>
 						<form method="post" action="{{ route('daftar') }}">
 							<div class="col-md-12">
 								<div class="form-group">

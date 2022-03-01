@@ -44,7 +44,7 @@ if(Session::get('role') == "admin"){
 <nav class="navbar navbar-expand-lg fixed-top trans-navigation">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="" class="img-fluid b-logo">
+                <img src="images/sipil2.png" alt="" class="img-fluid b-logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
