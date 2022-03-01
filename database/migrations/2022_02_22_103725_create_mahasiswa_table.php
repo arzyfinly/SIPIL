@@ -15,7 +15,9 @@ class CreateMahasiswaTable extends Migration
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('surename');
             $table->foreignId('id_user')->constrained('users');
             $table->string('nim');
             $table->string('alamat');
@@ -23,6 +25,8 @@ class CreateMahasiswaTable extends Migration
             $table->string('tmpt_lahir');
             $table->string('no_hp');
             $table->string('gender');
+            $table->string('photo');
+            $table->string('kelas')->nullable();
             $table->timestamps();
         });
     }
