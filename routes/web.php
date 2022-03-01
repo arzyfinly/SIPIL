@@ -21,6 +21,7 @@ use App\Http\Controllers\PraktikumController;
 Route::get('/', [MahasiswaController::class, 'index'])->name('/');
 Route::get('/mahasiswa/login/', [LoginController::class, 'index'])->name('login');
 Route::post('/mahasiswa/login/', [LoginController::class, 'login'])->name('login.custom');
+Route::post('/mahasiswa/register/', [MahasiswaController::class, 'create'])->name('register.custom');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/admin/', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin/praktikum/', [PraktikumController::class, 'index'])->name('praktikum');
@@ -28,3 +29,4 @@ Route::get('/admin/login/', [AdminController::class, 'login'])->name('login-admi
 Route::post('/admin/auth/', [AdminController::class, 'auth'])->name('admin.login');
 Route::get('/mahasiswa/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
 Route::post('/mahasiswa/verification', [PendaftaranController::class, 'daftar'])->name('daftar');
+Route::get('/mahasiswa/registration', [MahasiswaController::class, 'register'])->name('register');
