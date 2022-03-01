@@ -14,7 +14,9 @@ class MahasiswaSeeder extends Seeder
     public function run()
     {
         DB::table('mahasiswa')->insert([
-            'nama' => 'alexander pato',
+            'first_name' => 'Alexander',
+            'last_name' => 'Pato',
+            'surename' => 'alex',
             'id_user' => '3',
             'nim' => '71951112',
             'alamat' => 'Jl. Perdana, Sumenep',
