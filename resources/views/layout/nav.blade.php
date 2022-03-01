@@ -25,7 +25,7 @@ $user = DB::table('users')->where(['id'=>$u])->first();
     <title>SIPIL</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/monster-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo-icon.png') }}">
     <!-- Custom CSS -->
     <link href="{{ asset('plugins/chartist/dist/chartist.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -49,14 +49,14 @@ $user = DB::table('users')->where(['id'=>$u])->first();
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="{{asset('/images/logo-icon.png')}}" alt="homepage" class="dark-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="{{asset('/images/logo-text.png')}}" alt="homepage" class="dark-logo" />
 
                         </span>
                     </a>
@@ -99,7 +99,7 @@ $user = DB::table('users')->where(['id'=>$u])->first();
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">
+                                <img src="{{asset('/images/users/1.jpg')}}" alt="user" class="profile-pic me-2">
                                 <?php
                                 if($user != null){
                                     echo $user->nama;
@@ -126,10 +126,10 @@ $user = DB::table('users')->where(['id'=>$u])->first();
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                href="{{ route('admin') }}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                     aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="pages-profile.html" aria-expanded="false">
+                                href="{{ route('praktikum') }}" aria-expanded="false">
                                 <i class="me-3 fa fa-suitcase" aria-hidden="true"></i><span
                                     class="hide-menu">Praktikum</span></a>
                         </li>
@@ -162,12 +162,12 @@ $user = DB::table('users')->where(['id'=>$u])->first();
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Dashboard</h3>
+                        <h3 class="page-title mb-0 p-0">@yield('header')</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">@yield('header')</li>
                                 </ol>
                             </nav>
                         </div>
