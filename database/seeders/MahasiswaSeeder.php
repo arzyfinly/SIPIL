@@ -15,7 +15,7 @@ class MahasiswaSeeder extends Seeder
     {
         DB::table('mahasiswa')->insert([
             'nama' => 'alexander pato',
-            'email' => 'alexanderpato@gmail.com',
+            'id_user' => '1',
             'nim' => '71951112',
             'alamat' => 'Jl. Perdana, Sumenep',
             'tgl_lahir' => '2001-05-24',
@@ -25,7 +25,7 @@ class MahasiswaSeeder extends Seeder
         ]);
         DB::table('mahasiswa')->insert([
             'nama' => 'Muhammad Bagus Raga Maulidi',
-            'email' => 'ragarigot3@gmail.com',
+            'id_user' => '2',
             'nim' => '71951123',
             'alamat' => 'Jl. Kh. Wahid Hasyim GG 11',
             'tgl_lahir' => '2001-05-24',

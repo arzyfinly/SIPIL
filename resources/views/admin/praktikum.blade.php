@@ -1,8 +1,8 @@
 @extends('../layout.nav')
 
-@section('title', 'Home')
+@section('title', 'Praktikum')
 
-@section('header','Dashboard')
+@section('header','Praktikum')
 
 @section('content')
     <div>

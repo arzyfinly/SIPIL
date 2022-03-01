@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\PraktikumController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,7 @@ Route::get('/mahasiswa/login/', [LoginController::class, 'index'])->name('login'
 Route::post('/mahasiswa/login/', [LoginController::class, 'login'])->name('login.custom');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/admin/', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin/praktikum/', [PraktikumController::class, 'index'])->name('praktikum');
 Route::get('/admin/login/', [AdminController::class, 'login'])->name('login-admin');
 Route::post('/admin/auth/', [AdminController::class, 'auth'])->name('admin.login');
 Route::get('/mahasiswa/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
