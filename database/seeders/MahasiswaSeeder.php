@@ -14,12 +14,24 @@ class MahasiswaSeeder extends Seeder
     public function run()
     {
         DB::table('mahasiswa')->insert([
-            'first_name' => 'Alexander',
-            'last_name' => 'Pato',
-            'surename' => 'alex',
+            'first_name' => 'Muhammad Bagus',
+            'last_name' => 'Bagus Raga',
+            'surename' => 'Raga',
+            'id_user' => '2',
+            'nim' => '71951123',
+            'alamat' => 'Jl. Kh. Wahid Hasyim GG 11',
+            'tgl_lahir' => '2001-05-24',
+            'tmpt_lahir' => 'Sumenep',
+            'no_hp' => '081913678701',
+            'gender' => 'Laki - Laki',
+        ]);
+        DB::table('mahasiswa')->insert([
+            'first_name' => 'Andy',
+            'last_name' => 'Yulianto',
+            'surename' => 'Andy',
             'id_user' => '3',
-            'nim' => '71951112',
-            'alamat' => 'Jl. Perdana, Sumenep',
+            'nim' => '71951123',
+            'alamat' => 'Jl. Kh. Wahid Hasyim GG 11',
             'tgl_lahir' => '2001-05-24',
             'tmpt_lahir' => 'Sumenep',
             'no_hp' => '081913678701',
@@ -29,7 +41,7 @@ class MahasiswaSeeder extends Seeder
             'first_name' => 'Muhammad Bagus',
             'last_name' => 'Bagus Raga',
             'surename' => 'Raga',
-            'id_user' => '2',
+            'id_user' => '4',
             'nim' => '71951123',
             'alamat' => 'Jl. Kh. Wahid Hasyim GG 11',
             'tgl_lahir' => '2001-05-24',
