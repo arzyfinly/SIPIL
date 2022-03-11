@@ -19,7 +19,7 @@ class MahasiswaController extends BaseController
         $u = Session::get('id');
         if($u){
             $user = DB::table('mahasiswa')->where(['id_user'=>$u])->first();
-            return view('mahasiswa.index', ['user'=>$user]);
+            return view('mahasiswa.index', ['surename'=>$user]);
         }else{
             return view('mahasiswa.index');
         }
