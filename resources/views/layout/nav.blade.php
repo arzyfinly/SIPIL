@@ -121,6 +121,17 @@ $user = DB::table('users')->where(['id'=>$u])->first();
                                 <i class="me-3 fa fa-suitcase" aria-hidden="true"></i><span
                                     class="hide-menu">Praktikum</span></a>
                         </li>
+                        <li class="dropdown sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="me-3 fa fa-suitcase" aria-hidden="true"></i><span
+                                        class="hide-menu">Praktikum</span>
+                            </a>
+                            <div class="dropdown-menu" style="width:100%;" aria-labelledby="dropdownMenuButton">
+                                <a class="sidebar-link" href="#">Action</a>
+                                <a class="sidebar-link" href="#">Another action</a>
+                                <a class="sidebar-link" href="#">Something else here</a>
+                            </div>
+                        </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table-basic.html" aria-expanded="false"><i class="me-3 fa fa-wrench"
                                     aria-hidden="true"></i><span class="hide-menu">Sewa Alat</span></a></li>
@@ -205,5 +216,8 @@ $user = DB::table('users')->where(['id'=>$u])->first();
     <script src="{{asset('flot/jquery.flot.js')}}"></script>
     <script src="{{asset('flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
     <script src="{{asset('js/pages/dashboards/dashboard1.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
