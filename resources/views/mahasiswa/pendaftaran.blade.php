@@ -11,10 +11,22 @@
 							<h4>Pendaftaran Praktikum</h4>
 						</div>
 						<form method="post" action="{{ route('daftar') }}">
-							<div class="col-md-12">
+							<div class="col-md-4">
 								<div class="form-group">
-                                    <input type="text" class="form-control" name="nama" disabled value="<?= $mahasiswa->nama ?>" placeholder="Nama Lengkap">
-									<span class="form-label">Nama Lengkap</span>
+                                    <input type="text" class="form-control" name="first_name" disabled value="<?= $mahasiswa->first_name ?>" placeholder="Nama Lengkap">
+									<span class="form-label">Nama Depan</span>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+                                    <input type="text" class="form-control" name="last_name" disabled value="<?= $mahasiswa->last_name ?>" placeholder="Nama Lengkap">
+									<span class="form-label">Nama Belakang</span>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+                                    <input type="text" class="form-control" name="surename" disabled value="<?= $mahasiswa->surename ?>" placeholder="Nama Lengkap">
+									<span class="form-label">Nama Panggilan</span>
 								</div>
 							</div>
                             <div class="col-md-4">

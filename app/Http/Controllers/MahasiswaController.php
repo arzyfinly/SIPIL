@@ -36,7 +36,7 @@ class MahasiswaController extends BaseController
         $id = intval("0" .rand(1, 9) .rand(1, 9) .rand(1, 9) .rand(4, 8));
         $date = new \DateTime();
         $users = DB::table('users')->insert(['id'=>$id, 'email'=>$request->email, 'role'=>'mahasiswa', 'password'=>Hash::make($request->pass), 'created_at'=>$date, 'updated_at'=>$date]);
-        $mahasiswa = DB::table('mahasiswa')->insert(['nama'=>$request->nama, 'id_user'=>$id, 'nim'=>$request->nim, 'alamat'=>$request->alamat, 'tgl_lahir'=>$request->tgl_lahir, 'tmpt_lahir'=>$request->tmpt_lahir, 'no_hp'=>$request->no_hp, 'gender'=>$request->gender, 'created_at'=>$date, 'updated_at'=>$date]);
+        $mahasiswa = DB::table('mahasiswa')->insert(['first_name'=>$request->first_name, 'last_name'=>$request->last_name, 'surename'=>$request->surename,'id_user'=>$id, 'nim'=>$request->nim, 'alamat'=>$request->alamat, 'tgl_lahir'=>$request->tgl_lahir, 'tmpt_lahir'=>$request->tmpt_lahir, 'no_hp'=>$request->no_hp, 'gender'=>$request->gender, 'photo'=>$request->photo, 'kelas'=>$request->kelas, 'created_at'=>$date, 'updated_at'=>$date]);
         
         if($users && $mahasiswa){
             echo "<script>window.location='".Url::to('mahasiswa/login')."'</script>";

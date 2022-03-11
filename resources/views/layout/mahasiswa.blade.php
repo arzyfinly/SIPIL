@@ -66,9 +66,9 @@ if(Session::get('role') == "admin"){
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('pendaftaran') }}">Pendaftaran Praktikum</a>
-                            <a class="dropdown-item" href="#">Daftar Hadir</a>
-                            <a class="dropdown-item" href="#">Pelaksanaangi</a>
-                            <a class="dropdown-item" href="#">Pelaksanaan Ujian Praktikum</a>
+                            <a class="dropdown-item" href="{{ route('daftar-hadir') }}">Daftar Hadir</a>
+                            <a class="dropdown-item" href="{{ route('pelaksanaan') }}">Pelaksanaan</a>
+                            <a class="dropdown-item" href="{{ route('ujian') }}">Pelaksanaan Ujian Praktikum</a>
                         </div>
                     </div>
                     <li class="nav-item">
@@ -85,7 +85,7 @@ if(Session::get('role') == "admin"){
                     </li>
                     <div class="dropdown nav-item">
                         <a class="nav-link smoth-scroll" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?= $user->nama ?>
+                            <?= $user->surename ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>

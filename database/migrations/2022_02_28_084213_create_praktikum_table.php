@@ -15,12 +15,7 @@ class CreatePraktikumTable extends Migration
     {
         Schema::create('praktikum', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('nim');
-            $table->string('alamat');
-            $table->date('tgl_lahir');
-            $table->string('tmpt_lahir');
-            $table->string('no_hp');
+            $table->foreignId('id_mahasiswa')->constrained('mahasiswa');
             $table->string('prasyarat');
             $table->string('ikut_praktikum');
             $table->string('kelas');

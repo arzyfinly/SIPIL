@@ -4,19 +4,32 @@
 @section('content')
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
+        <?php
+            if($mahasiswa->gender == 'Laki-laki'){
+        ?>
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><?= $mahasiswa->nama ?></span><span class="text-black-50"><?= $user->email ?></span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><?= $mahasiswa->first_name ?> <?= $mahasiswa->last_name ?></span><span class="text-black-50"><?= $user->email ?></span><span> </span></div>
         </div>
+        <?php
+            }else{
+        ?>
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{ asset('images/profile.jpg') }}"><span class="font-weight-bold"><?= $mahasiswa->first_name ?> <?= $mahasiswa->last_name ?></span><span class="text-black-50"><?= $user->email ?></span><span> </span></div>
+        </div>
+        <?php
+            }
+        ?>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                    <div class="col-md-6"><label class="labels">Nama Depan</label><input type="text" class="form-control" value="<?= $mahasiswa->first_name ?>"></div>
+                    <div class="col-md-6"><label class="labels">Nama Belakang</label><input type="text" class="form-control" value="<?= $mahasiswa->last_name ?>"></div>
                 </div>
                 <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Nama Panggilan</label><input type="text" class="form-control" value="<?= $mahasiswa->surename ?>"></div>
                     <div class="col-md-12"><label class="labels">Nim</label><input type="text" class="form-control" value="<?= $mahasiswa->nim ?>"></div>
                     <div class="col-md-12"><label class="labels">Alamat</label><input type="text" class="form-control" value="<?= $mahasiswa->alamat ?>"></div>
                     <div class="col-md-12"><label class="labels">Tanggal Lahir</label><input type="text" class="form-control" value="<?= $mahasiswa->tgl_lahir ?>"></div>

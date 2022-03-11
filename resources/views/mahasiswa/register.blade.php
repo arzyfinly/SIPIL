@@ -10,7 +10,17 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@gmail.com">
-						<input class="input100" type="text" name="nama" placeholder="Nama Lengkap">
+						<input class="input100" type="text" name="first_name" placeholder="Nama Depan">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@gmail.com">
+						<input class="input100" type="text" name="last_name" placeholder="Nama Belakang">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@gmail.com">
+						<input class="input100" type="text" name="surename" placeholder="Nama Panggilan">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>

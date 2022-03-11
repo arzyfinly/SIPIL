@@ -7,6 +7,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\PraktikumController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DaftarHadirController;
+use App\Http\Controllers\PelaksanaanController;
+use App\Http\Controllers\UjianController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +35,6 @@ Route::get('/mahasiswa/pendaftaran', [PendaftaranController::class, 'index'])->n
 Route::post('/mahasiswa/verification', [PendaftaranController::class, 'daftar'])->name('daftar');
 Route::get('/mahasiswa/registration', [MahasiswaController::class, 'register'])->name('register');
 Route::get('/mahasiswa/profile/', [ProfileController::class, 'profile'])->name('profile');
+Route::get('/mahasiswa/daftar-hadir/', [DaftarHadirController::class, 'index'])->name('daftar-hadir');
+Route::get('/mahasiswa/pelaksanaan-praktikum/', [PelaksanaanController::class, 'index'])->name('pelaksanaan');
+Route::get('/mahasiswa/pelaksanaan-ujian-praktikum/', [UjianController::class, 'index'])->name('ujian');
