@@ -13,7 +13,7 @@
 						<form method="post" action="{{ route('daftar') }}">
 							<div class="col-md-12">
 								<div class="form-group">
-                                    <input type="text" class="form-control" name="nama" disabled value="<?= $mahasiswa->nama ?>" placeholder="Nama Lengkap">
+                                    <input type="text" class="form-control" name="nama" disabled value="<?= $mahasiswa->first_name ?>  <?= $mahasiswa->last_name ?>" placeholder="Nama Lengkap">
 									<span class="form-label">Nama Lengkap</span>
 								</div>
 							</div>

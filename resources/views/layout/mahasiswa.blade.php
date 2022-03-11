@@ -85,7 +85,7 @@ if(Session::get('role') == "admin"){
                     </li>
                     <div class="dropdown nav-item">
                         <a class="nav-link smoth-scroll" href="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?= $user->nama ?>
+                            <?= $user->surename ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
