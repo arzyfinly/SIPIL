@@ -116,21 +116,6 @@ $user = DB::table('users')->where(['id'=>$u])->first();
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('admin') }}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                     aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item dropdown"> 
-                            <a class="sidebar-link dropdown-toggle waves-effect waves-dark nav-link" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                <i class="me-3 fa fa-suitcase" aria-hidden="true"></i>
-                                <span class="hide-menu">Praktikum</span>
-                            </a>
-                                <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">A</a>
-                                    <a href="#" class="dropdown-item">B</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="#" class="dropdown-item">C</a>
-                                </div>
-                                
-                               
-
-                        </li>
                         <li class="dropdown sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="me-3 fa fa-suitcase" aria-hidden="true"></i><span
