@@ -122,9 +122,11 @@ $user = DB::table('users')->where(['id'=>$u])->first();
                                         class="hide-menu">Praktikum</span>
                             </a>
                             <div class="dropdown-menu" style="width:100%;" aria-labelledby="dropdownMenuButton">
-                                <a class="sidebar-link" href="#">Action</a>
-                                <a class="sidebar-link" href="#">Another action</a>
-                                <a class="sidebar-link" href="#">Something else here</a>
+                                <a class="sidebar-link" href="{{ route('admin.pendaftaran') }}">Pendaftaran</a>
+                                <a class="sidebar-link" href="#">Daftar Hadir</a>
+                                <a class="sidebar-link" href="#">BA Pelaksanaan</a>
+                                <a class="sidebar-link" href="#">BA Pelaksanaan Ujian</a>
+                                <a class="sidebar-link" href="#">Harga Praktikum</a>
                             </div>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"

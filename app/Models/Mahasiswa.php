@@ -21,6 +21,6 @@ class Mahasiswa extends Model
         'gender',
     ];
     public function user(){
-        return $this->belongsTo(User::class, 'id_user');
+        return $this->hasOne(User::class, 'id_user');
     }
 }

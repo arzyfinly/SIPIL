@@ -29,6 +29,7 @@ Route::post('/mahasiswa/register/', [MahasiswaController::class, 'create'])->nam
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/admin/', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin/praktikum/', [PraktikumController::class, 'index'])->name('praktikum');
+Route::get('/admin/pendaftaran/', [PendaftaranController::class, 'admin'])->name('admin.pendaftaran');
 Route::get('/admin/login/', [AdminController::class, 'login'])->name('login-admin');
 Route::post('/admin/auth/', [AdminController::class, 'auth'])->name('admin.login');
 Route::get('/mahasiswa/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');

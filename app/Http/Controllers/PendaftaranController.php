@@ -21,4 +21,12 @@ class PendaftaranController extends BaseController
             return view('/');
         }
     }
+    public function admin()
+    {   
+        return view('admin.pendaftaran');
+        // if($admin != null){
+        // } else {
+        //     return view('/');
+        // }
+    }
 }

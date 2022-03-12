@@ -13,7 +13,6 @@
 						<form method="post" action="{{ route('daftar') }}">
 							<div class="col-md-4">
 								<div class="form-group">
-<<<<<<< HEAD
                                     <input type="text" class="form-control" name="first_name" disabled value="<?= $mahasiswa->first_name ?>" placeholder="Nama Lengkap">
 									<span class="form-label">Nama Depan</span>
 								</div>
@@ -28,10 +27,6 @@
 								<div class="form-group">
                                     <input type="text" class="form-control" name="surename" disabled value="<?= $mahasiswa->surename ?>" placeholder="Nama Lengkap">
 									<span class="form-label">Nama Panggilan</span>
-=======
-                                    <input type="text" class="form-control" name="nama" disabled value="<?= $mahasiswa->first_name ?>  <?= $mahasiswa->last_name ?>" placeholder="Nama Lengkap">
-									<span class="form-label">Nama Lengkap</span>
->>>>>>> 6997c02036be7d579e3c7ddb6ba811c5797f5745
 								</div>
 							</div>
                             <div class="col-md-4">
